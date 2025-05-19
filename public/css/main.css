@@ -1,0 +1,239 @@
+/* public/css/main.css */
+
+/* --- Font Reference (from Charte Graphique) ---
+   Logo Font: Aribau Rounded Trial Medium (Assumed for logo image/SVG)
+   Content Font (Police de Redaction): Cambria
+*/
+
+/* --- Color Palette (from Charte Graphique) --- */
+:root {
+    --primary-light-blue: #6FC8F0;  /* RGB 111, 200, 240 */
+    --primary-dark-blue: #334A5A;   /* RGB 51, 74, 90 */
+    --primary-brown: #90370F;       /* RGB 144, 55, 15 */
+    --secondary-beige: #CCB5A5;     /* RGB 204, 181, 165 */
+    --secondary-white: #FFFFFF;     /* RGB 255, 255, 255 */
+    --site-background: #FBF9F7;     /* A very light, warm off-white, softer than pure white */
+                                     /* Alternative: #F5EFE0 from FAQ if that's the preferred global bg */
+    --text-color-default: #333333;
+    --text-color-headings: var(--primary-dark-blue);
+    --text-color-labels: var(--primary-dark-blue);
+    --link-color: var(--primary-light-blue);
+    --link-hover-color: var(--primary-dark-blue);
+    --input-border-color: var(--secondary-beige);
+    --input-focus-border-color: var(--primary-light-blue);
+    --input-focus-shadow-color: rgba(111, 200, 240, 0.35);
+    --button-primary-bg: var(--primary-light-blue);
+    --button-primary-text: var(--primary-dark-blue);
+    --button-primary-hover-bg: #5AB8E0; /* Slightly darker light blue */
+}
+
+/* --- General Body & Font Setup --- */
+body {
+    font-family: 'Cambria', serif; /* Police de Redaction */
+    background-color: var(--site-background);
+    color: var(--text-color-default);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Global Container --- */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Standard max-width, adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color-headings);
+    font-family: 'Cambria', serif; /* Or 'Aribau Rounded Trial Medium' if available and desired for all headings */
+    margin-top: 0;
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.25rem; font-weight: 600;}
+h2 { font-size: 1.75rem; font-weight: 600;}
+h3 { font-size: 1.5rem;  font-weight: 600;}
+/* Add more as needed */
+
+/* --- Links --- */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* --- Basic Form Element Styling (can be overridden by specific form CSS) --- */
+label {
+    display: block;
+    color: var(--text-color-labels);
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 6px; /* Slightly less rounded for global */
+    box-sizing: border-box;
+    font-family: 'Cambria', serif;
+    font-size: 1rem;
+    color: var(--primary-dark-blue);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+    color: var(--secondary-beige);
+    opacity: 0.8;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 0 0.2rem var(--input-focus-shadow-color);
+    outline: none;
+}
+
+/* --- General Button Styling --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Cambria', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    text-decoration: none; /* Ensure links styled as buttons don't have underlines */
+}
+
+.btn-primary {
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+}
+
+.btn-primary:hover {
+    background-color: var(--button-primary-hover-bg);
+    transform: translateY(-1px);
+}
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Add .btn-secondary, .btn-danger etc. if needed */
+
+/* --- Utility Classes (Optional but helpful) --- */
+.text-center {
+    text-align: center;
+}
+.mt-1 { margin-top: 0.5rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+/* ... more spacing utilities */
+
+/* --- Responsive Base --- */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px; /* Slightly smaller base font for smaller screens */
+    }
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.35rem; }
+}
+
+/* Add to public/css/main.css */
+.flash-message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.375rem; /* Match other radii */
+    /* Position fixed at top? or within container? */
+    position: fixed;
+    top: 80px; /* Below fixed header */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    min-width: 300px;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.alert-success { color: #0f5132; background-color: #d1e7dd; border-color: #badbcc; }
+.alert-danger { color: #842029; background-color: #f8d7da; border-color: #f5c2c7; }
+.alert-warning { color: #664d03; background-color: #fff3cd; border-color: #ffecb5; }
+.alert-info { color: #055160; background-color: #cff4fc; border-color: #b6effb; }
+
+/* Ensure container pushes content below fixed flash messages */
+.container {
+    margin-top: 50px; /* Adjust if flash messages take more space */
+}
+
+/* Add to public/css/main.css */
+
+.avatar {
+    display: inline-block; /* Or block, depending on context */
+    border-radius: 50%;    /* Makes it round */
+    object-fit: cover;     /* Ensures the image covers the area, cropping if necessary, without distortion */
+    background-color: var(--secondary-beige, #CCB5A5); /* Placeholder color if image fails to load or for transparent PNGs */
+    vertical-align: middle; /* Helps align with adjacent text */
+}
+
+.avatar-sm { /* Small avatar, e.g., in lists, comments */
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--input-border-color, #eee);
+}
+
+.avatar-md { /* Medium avatar, e.g., driver info on trip page */
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--secondary-white, #FFFFFF);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.avatar-lg { /* Large avatar, e.g., main profile picture */
+    width: 150px;
+    height: 150px;
+    border: 4px solid var(--secondary-white, #FFFFFF);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.avatar-xl { /* Extra large, if needed */
+    width: 200px;
+    height: 200px;
+    border: 5px solid var(--secondary-white, #FFFFFF);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}

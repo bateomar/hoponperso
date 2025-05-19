@@ -1,0 +1,7 @@
+/* Styles pour les liens des cartes de trajet */
+.ride-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}

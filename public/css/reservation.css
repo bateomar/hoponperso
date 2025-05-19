@@ -1,0 +1,394 @@
+/* Styles de la page réservations */
+
+/* Page title */
+.page-title {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+}
+
+.tab.active {
+    color: #334A5A;
+    border-bottom: 3px solid #334A5A;
+}
+
+/* Reservations list */
+.reservations-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .reservations-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Reservation card */
+.reservation-card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.reservation-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card header */
+.reservation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.reservation-date {
+    font-weight: bold;
+    color: #333;
+}
+
+.reservation-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.status-confirmed {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border-color: #C8E6C9;
+}
+
+.status-pending {
+    background-color: #FFF3E0;
+    color: #E65100;
+    border-color: #FFE0B2;
+}
+
+.status-cancelled {
+    background-color: #FFEBEE;
+    color: #C62828;
+    border-color: #FFCDD2;
+}
+
+/* Route display */
+.reservation-route {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    gap: 5px;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.location-label {
+    font-size: 12px;
+    color: #666;
+}
+
+.location-name {
+    font-weight: bold;
+}
+
+.route-time {
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.route-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #ddd;
+    position: relative;
+    margin: 0 10px;
+}
+
+.route-line::before, .route-line::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #334A5A;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.route-line::before {
+    left: 0;
+}
+
+.route-line::after {
+    right: 0;
+}
+
+/* Reservation details */
+.reservation-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.driver-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.driver-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #334A5A;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+.driver-name {
+    font-weight: bold;
+}
+
+.driver-rating {
+    color: #666;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.reservation-price {
+    font-weight: bold;
+    color: #334A5A;
+    font-size: 18px;
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-outline {
+    background-color: #fff;
+    color: #334A5A;
+    border: 1px solid #ddd;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Specific styles for the image you provided */
+.container {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.reservation-card {
+    /* Existing styles */
+    margin-bottom: 15px; /* Add some margin between cards */
+}
+
+.reservation-header {
+    /* Existing styles */
+}
+
+.reservation-date {
+    /* Existing styles */
+}
+
+.reservation-status {
+    /* Existing styles */
+    border-radius: 15px; /* Make it more rounded */
+    padding: 8px 15px;
+}
+
+.reservation-route {
+    /* Existing styles */
+    display: flex;
+    align-items: center; /* Vertically center items */
+    margin: 10px 0;
+}
+
+.route-time {
+    font-size: 16px; /* Larger time */
+    margin: 0 10px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.location {
+    /* Existing styles */
+}
+
+.location-label {
+    font-size: 11px;
+    color: #7f8c8d;
+}
+
+.location-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.route-line {
+    /* Existing styles */
+    height: 3px; /* Thicker line */
+    background-color: #bdc3c7;
+    margin: 0 15px;
+}
+
+.route-line::before,
+.route-line::after {
+    /* Existing styles */
+    width: 10px; /* Larger circles */
+    height: 10px;
+}
+
+.reservation-details {
+    /* Existing styles */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ecf0f1;
+}
+
+.driver-info {
+    /* Existing styles */
+    display: flex;
+    align-items: center;
+}
+
+.driver-avatar {
+    /* Existing styles */
+    width: 50px; /* Larger avatar */
+    height: 50px;
+    font-size: 20px; /* Larger font */
+    margin-right: 15px;
+}
+
+.driver-name {
+    /* Existing styles */
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.driver-rating {
+    /* Existing styles */
+    font-size: 14px;
+    color: #e74c3c; /* Example color */
+    margin-top: 5px;
+}
+
+.reservation-price {
+    /* Existing styles */
+    font-size: 20px; /* Larger price */
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.action-buttons {
+    /* Existing styles */
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #3498db;
+    color: #3498db;
+}
+
+.btn-outline:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.empty-state {
+    /* Existing styles */
+    padding: 30px;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.empty-state h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}

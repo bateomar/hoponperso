@@ -1,0 +1,130 @@
+/* public/css/create_trip.css */
+/* Inherits styles from main.css */
+
+.create-trip-container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    max-width: 800px; /* Wider container for create trip form */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.create-trip-form {
+    /* Re-use card styling from main.css or profile.css */
+    background-color: var(--secondary-white, #FFFFFF);
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.create-trip-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: var(--text-color-headings);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--input-border-color, #eee);
+}
+
+/* Form rows for better layout */
+.create-trip-form .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px; /* Space below row */
+}
+.create-trip-form .form-row .form-group {
+    flex: 1; /* Make groups share space equally */
+    margin-bottom: 0; /* Reset margin as row handles it */
+}
+
+.create-trip-form .form-group {
+    margin-bottom: 20px; /* Space below single groups */
+}
+
+.create-trip-form .form-group label {
+    /* Styles inherited from main.css */
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+/* Input, Select, Textarea styling inherited from main.css */
+/* Add specific overrides if needed */
+.create-trip-form .form-group input[type="date"],
+.create-trip-form .form-group input[type="time"] {
+    /* Ensure consistent appearance */
+}
+
+.create-trip-form .form-group small {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gris-texte, #666); /* Using var from previous CSS */
+    margin-top: 5px;
+}
+.create-trip-form .form-group small a {
+    color: var(--link-color);
+}
+.create-trip-form .form-group small a:hover {
+    color: var(--link-hover-color);
+}
+
+
+.create-trip-form .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Checkbox Styling */
+.create-trip-form .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Consistent spacing */
+}
+.create-trip-form .checkbox-group input[type="checkbox"] {
+    width: auto; /* Override default full width */
+    flex-shrink: 0;
+    margin-top: 2px; /* Align better with label */
+}
+.create-trip-form .checkbox-group label {
+    margin-bottom: 0; /* Remove bottom margin for checkbox label */
+    font-weight: normal; /* Normal weight for checkbox label */
+}
+
+/* Form Actions (Save/Cancel buttons) */
+.create-trip-form .form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end; /* Align buttons right */
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid var(--input-border-color, #eee);
+}
+.create-trip-form .form-actions .btn {
+    min-width: 120px; /* Give buttons some minimum width */
+}
+
+/* Responsive adjustments */
+ @media (max-width: 768px) {
+    .create-trip-form .form-row {
+        flex-direction: column;
+        gap: 0; /* Remove gap, form-group will handle its own bottom margin */
+        margin-bottom: 0;
+    }
+    .create-trip-form .form-row .form-group {
+        margin-bottom: 20px; /* Add margin back to group when stacked */
+    }
+    .create-trip-container {
+         max-width: 100%;
+    }
+    .create-trip-form {
+        padding: 20px;
+    }
+    .create-trip-form .form-actions {
+        flex-direction: column-reverse; /* Stack buttons, primary on bottom */
+    }
+    .create-trip-form .form-actions .btn {
+        width: 100%;
+    }
+ }

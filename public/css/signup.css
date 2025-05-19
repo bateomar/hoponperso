@@ -1,0 +1,136 @@
+/* public/css/signup.css */
+/* Styles specific to the signup page, inheriting from main.css */
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh; /* Adjusted to ensure space, assuming header/footer take some vh */
+    padding: 30px 20px; /* Overall padding for the container on the page */
+    box-sizing: border-box;
+}
+
+.signup-form-wrapper { /* Renamed from .signup-form to avoid confusion if .signup-form is used elsewhere more generically */
+    background: var(--secondary-white); /* Uses white from main.css variables */
+    padding: 30px 40px;
+    border-radius: 12px; /* More rounded for this specific form */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: left;
+}
+
+.signup-form-wrapper h1 {
+    /* color is inherited from main.css h1 */
+    /* font-family is inherited */
+    font-size: 2rem; /* Override if different from global h1 */
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Specific adjustments to form elements if needed, beyond main.css */
+.signup-form-wrapper .form-group {
+    margin-bottom: 20px;
+}
+
+.signup-form-wrapper .form-group label {
+    /* font-size, color, font-weight inherited from main.css label */
+}
+
+.signup-form-wrapper .form-group input[type="text"],
+.signup-form-wrapper .form-group input[type="email"],
+.signup-form-wrapper .form-group input[type="password"] {
+    /* padding, border, border-radius might be slightly different if desired */
+    padding: 12px 15px; /* Slightly more padding for this form */
+    border-radius: 8px; /* More rounded */
+    /* other properties like font-family, font-size, color, transitions are inherited */
+}
+
+/* Button in signup form specific styling, inherits .btn and .btn-primary */
+.signup-form-wrapper .btn.btn-primary {
+    width: 100%; /* Full width for this specific form button */
+    padding: 14px 20px; /* Larger padding */
+    font-size: 1.1rem; /* Larger font size */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    /* background-color, color, hover effects are inherited from .btn-primary in main.css */
+}
+
+/* Messages Styling - specific to signup, or could be global if consistent */
+.signup-form-wrapper .error-message,
+.signup-form-wrapper .success-message {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.signup-form-wrapper .error-message {
+    background-color: #F8D7DA;
+    color: var(--primary-brown);
+    border-color: var(--primary-brown);
+}
+
+.signup-form-wrapper .success-message {
+    background-color: #D4EDDA;
+    color: var(--primary-dark-blue);
+    border-color: #A3D7AF;
+}
+
+/* Link to Login Page */
+.signup-form-wrapper p {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--primary-dark-blue);
+}
+
+.signup-form-wrapper p a {
+    /* color, text-decoration, font-weight, transition inherited from main.css a */
+    font-weight: bold; /* Ensure it's bold here */
+}
+
+.signup-form-wrapper p a:hover {
+    /* hover color and text-decoration inherited from main.css a:hover */
+}
+
+/* Responsive Adjustments for signup page specifically */
+@media (max-width: 768px) {
+    .signup-form-wrapper h1 {
+        font-size: 1.8rem;
+    }
+    .signup-form-wrapper {
+        padding: 25px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 20px 15px;
+        min-height: 0; /* Allow content to determine height on very small screens */
+    }
+    .signup-form-wrapper {
+        padding: 20px;
+        margin-top: 20px; /* Add some top margin if min-height is removed */
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    .signup-form-wrapper h1 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    .signup-form-wrapper .form-group input[type="text"],
+    .signup-form-wrapper .form-group input[type="email"],
+    .signup-form-wrapper .form-group input[type="password"] {
+        padding: 10px 12px;
+    }
+    .signup-form-wrapper .btn.btn-primary {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+}

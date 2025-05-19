@@ -1,0 +1,125 @@
+/* Responsive Styles */
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+    .header-container {
+        padding: 1rem;
+    }
+    
+    .content-container {
+        padding: 0 1rem;
+    }
+    
+    .sidebar {
+        width: 220px;
+    }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 768px) {
+    .header-container {
+        padding: 1rem;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    .auth-buttons {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .content-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .search-sort-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .sort-filters {
+        justify-content: space-between;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-sections {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-copyright {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 576px) {
+    .sort-filters {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .sort-btn {
+        flex: 1;
+        text-align: center;
+        min-width: 45%;
+    }
+    
+    .new-ride-btn {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .ride-timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .timeline-line {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .timeline-start,
+    .timeline-end {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-start::after {
+        content: 'Départ';
+        color: var(--lighter-text);
+        font-weight: normal;
+    }
+    
+    .timeline-end::after {
+        content: 'Arrivée';
+        color: var(--lighter-text);
+        font-weight: normal;
+    }
+}

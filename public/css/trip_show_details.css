@@ -1,0 +1,134 @@
+/* public/css/trip_show.css */
+/* Styles for the single trip detail/reservation page */
+/* Inherits styles from main.css */
+/* Uses many classes from the original trip_reservation.css if they are good */
+
+/* If your HTML structure from the original trip_reservation.php uses these, they'll apply */
+/* Many styles can be reused from public/css/profile.css for .card, .driver-info etc. */
+
+.trip-show-container { /* New wrapper, if needed. Existing view uses global .container */
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.trip-show-container h1.mb-4 { /* From old view */
+    font-size: 1.9rem;
+    color: var(--text-color-headings);
+    margin-bottom: 1.5rem !important; /* Bootstrap class override */
+}
+
+/* Re-using class names from your original trip_reservation.php view */
+/* These styles are from your provided trip_reservation.css with charte colors */
+.row { display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; }
+.col-lg-8 { flex: 0 0 66.666667%; max-width: 66.666667%; padding-right: 15px; padding-left: 15px; }
+.col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; padding-right: 15px; padding-left: 15px; }
+
+
+.trajet-card { /* Main card for trip details */
+    background-color: var(--secondary-white, #FFFFFF);
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    padding: 25px;
+}
+
+.trajet-info { display: flex; align-items: flex-start; margin-bottom: 20px; }
+.trajet-horaire { display: flex; flex-direction: column; margin-right: 25px; align-items: center; flex-shrink: 0; }
+.trajet-lieu { display: flex; flex-direction: column; flex-grow: 1; }
+.trajet-separation { border-left: 2px solid var(--primary-light-blue); height: 50px; margin: 8px 0; }
+.trajet-heure { font-weight: bold; font-size: 1.2rem; color: var(--primary-dark-blue); margin-bottom: 2px; }
+.trajet-ville { font-weight: 600; font-size: 1.1rem; color: var(--primary-brown); margin-bottom: 3px; }
+.trajet-detail { color: var(--gris-texte, #666); font-size: 0.9rem; }
+
+.conducteur-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--input-border-color, #eee);
+}
+.conducteur-info .conducteur-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid var(--secondary-beige);
+}
+.conducteur-info .conducteur-avatar i.fa-user { /* Fallback icon */
+    font-size: 30px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;
+    background-color: var(--secondary-beige); border-radius: 50%; color: var(--primary-dark-blue); margin-right: 15px;
+}
+.conducteur-info h5 { margin: 0 0 4px 0; font-size: 1.15rem; }
+.conducteur-info h5 a { color: var(--primary-dark-blue); text-decoration: none; }
+.conducteur-info h5 a:hover { color: var(--primary-light-blue); }
+.conducteur-note { color: #FFD700; margin-right: 8px; font-weight: bold; }
+.conducteur-note i.fa-star { font-size: 0.9em; }
+.text-muted { color: var(--gris-texte, #6c757d); font-size: 0.9rem; }
+
+
+.vehicule-info, .preferences, .trip-details-text {
+    color: var(--gris-texte, #666);
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--input-border-color, #eee);
+}
+.vehicule-info p, .preferences p, .trip-details-text p { margin-bottom: 5px; }
+.preferences h3, .trip-details-text h3 { font-size: 1.1rem; color: var(--primary-dark-blue); margin-bottom: 10px; }
+.preferences ul { list-style: none; padding-left: 0; }
+.preferences li { margin-bottom: 5px; display: flex; align-items: center;}
+.preference-icon {
+    color: var(--primary-light-blue);
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+
+.reservation-card { /* Card for booking actions */
+    background-color: var(--secondary-white, #FFFFFF);
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    padding: 25px;
+    margin-bottom: 20px;
+    position: sticky; /* Make it sticky */
+    top: 100px; /* Adjust based on fixed header height */
+}
+.trajet-prix-label { font-size: 0.9rem; color: var(--gris-texte, #666); margin-bottom: 2px; }
+.trajet-prix { font-size: 1.6rem; font-weight: bold; color: var(--primary-brown); }
+.trajet-places { display: flex; align-items: center; background-color: rgba(111, 200, 246, 0.1); padding: 10px 15px; border-radius: 6px; margin: 20px 0; }
+.places-icon { color: var(--primary-light-blue); margin-right: 8px; font-size: 1.1rem; }
+.places-text { font-size: 0.95rem; font-weight: 600; color: var(--primary-dark-blue); }
+
+.btn-reserver { /* Main booking button */
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    padding: 12px 0;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+}
+.btn-reserver:hover { background-color: var(--button-primary-hover-bg); }
+.btn-reserver:disabled, .btn-reserver.bg-secondary { background-color: #6c757d; color: white; cursor: not-allowed; }
+.btn-reserver.bg-info { background-color: #0dcaf0; color: white; } /* Example for already booked */
+
+.contact-link { font-weight: 600; }
+.contact-link i { margin-right: 5px; }
+
+/* Responsive for trip show page */
+@media (max-width: 992px) { /* Tablet and smaller */
+    .row { flex-direction: column; }
+    .col-lg-8, .col-lg-4 { max-width: 100%; flex-basis: auto; }
+    .reservation-card { position: static; margin-top: 20px; }
+}
+@media (max-width: 768px) { /* Mobile */
+    .trajet-info { flex-direction: column; }
+    .trajet-horaire { flex-direction: row; width: 100%; justify-content: space-around; margin-bottom: 15px; margin-right: 0; }
+    .trajet-separation { border-left: none; border-top: 2px solid var(--primary-light-blue); width: 60px; height: auto; margin: 0 10px; }
+}

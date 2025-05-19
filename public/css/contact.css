@@ -1,0 +1,272 @@
+/* Contact Page Styles */
+
+.contact-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.contact-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.icon-container {
+    width: 60px;
+    height: 60px;
+    background-color: #e8f5e9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.icon-container i {
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.info-card p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.info-card a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-card a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    color: #555;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.contact-form-container {
+    flex: 2;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+    margin-bottom: 25px;
+}
+
+.form-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-header p {
+    color: #666;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.required {
+    color: #e53935;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.form-actions {
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.faq-cta {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.faq-cta p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    padding: 10px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.map-container {
+    height: 450px;
+    margin-bottom: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    display: block;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-info, .contact-form-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-header h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-form-container {
+        padding: 20px;
+    }
+    
+    .faq-cta {
+        padding: 30px 20px;
+    }
+    
+    .faq-cta h2 {
+        font-size: 1.5rem;
+    }
+    
+    .map-container {
+        height: 350px;
+    }
+}

@@ -1,0 +1,293 @@
+/* public/css/profil.css */
+/* Styles specific to the profile page, inheriting from main.css */
+
+/* Using CSS variables defined in main.css */
+
+/* --- General Layout --- */
+.profile-container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Sidebar width and main content */
+    gap: 30px;
+}
+
+.profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* General Card Styling */
+.card {
+    background-color: var(--secondary-white, #FFFFFF);
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card h2, .card h3 {
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.3rem;
+    color: var(--text-color-headings);
+}
+.card h3 {
+    font-size: 1.15rem;
+}
+
+/* --- Sidebar Elements --- */
+.profile-picture-section {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-white, #FFFFFF);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid var(--secondary-white, #FFFFFF);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.change-picture-link {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--link-color);
+    text-decoration: underline;
+}
+.change-picture-link:hover {
+    color: var(--link-hover-color);
+}
+
+.profile-name-section {
+    text-align: center;
+    margin-top: -10px; /* Overlap slightly with picture card */
+}
+
+.profile-name-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.member-since, .user-age {
+    font-size: 0.9rem;
+    color: var(--gris-texte, #666);
+    margin-bottom: 3px;
+}
+
+.profile-verification ul,
+.profile-preferences ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.profile-verification li,
+.profile-preferences li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+.profile-verification i,
+.profile-preferences i {
+    margin-right: 10px;
+    width: 18px; /* Align icons */
+    text-align: center;
+}
+
+.profile-verification .verified i {
+    color: #28a745; /* Green */
+}
+.profile-verification .not-verified i {
+    color: #dc3545; /* Red */
+}
+.profile-verification .not-verified a {
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.profile-preferences i {
+    color: var(--primary-light-blue);
+}
+
+
+.profile-actions .btn {
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 15px;
+}
+.profile-actions .btn:last-child {
+    margin-bottom: 0;
+}
+.full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+.btn-secondary { /* Define if not in main.css */
+    background-color: #f8f9fa;
+    color: var(--primary-dark-blue);
+    border: 1px solid #dee2e6;
+}
+.btn-secondary:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+
+/* --- Main Content Elements --- */
+.profile-rating-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--primary-light-blue) 0%, #87CEEB 100%); /* Gradient background */
+    color: var(--secondary-white);
+    text-align: center;
+}
+.profile-rating-summary .rating-stars {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.profile-rating-summary .rating-stars i {
+    color: #FFD700; /* Gold color for star */
+}
+.profile-rating-summary .rating-count {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.profile-bio p {
+    line-height: 1.7;
+    color: #444;
+}
+
+.edit-link {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.profile-vehicles .vehicle-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+.profile-vehicles .vehicle-item:last-child {
+    border-bottom: none;
+}
+.profile-vehicles .vehicle-icon {
+    color: var(--primary-dark-blue);
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+.profile-vehicles .edit-link {
+    margin-left: auto; /* Push edit link to the right */
+    margin-top: 0;
+    font-size: 0.8rem;
+}
+
+.add-vehicle-btn {
+    margin-top: 15px;
+}
+
+.profile-ratings-received .ratings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.profile-ratings-received .ratings-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+.profile-ratings-received .ratings-list li:last-child {
+    border-bottom: none;
+}
+.profile-ratings-received .rating-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+.profile-ratings-received .rating-author {
+    font-weight: bold;
+    color: var(--primary-dark-blue);
+}
+.profile-ratings-received .rating-score i {
+    color: #FFD700;
+}
+.profile-ratings-received .rating-date {
+    color: var(--gris-texte);
+    font-size: 0.85rem;
+}
+.profile-ratings-received .rating-comment {
+    margin: 5px 0 0 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+.view-all-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Status Message Styling */
+.status-message {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+}
+.status-message.success {
+    background-color: #D4EDDA; color: #155724; border-color: #A3D7AF;
+}
+.status-message.error {
+     background-color: #F8D7DA; color: #721c24; border-color: #f5c6cb;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .profile-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+    .profile-sidebar {
+        /* Optional: change direction or alignment if needed when stacked */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 15px 20px;
+    }
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+     .profile-name-section h1 {
+        font-size: 1.6rem;
+    }
+}

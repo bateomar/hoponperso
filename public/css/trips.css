@@ -1,0 +1,239 @@
+/* public/css/trip.css */
+/* Styles for the main trip listing/browsing page */
+/* Inherits from main.css */
+
+.browse-trips-container {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Filters sidebar and main content */
+    gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    /* Uses .container for max-width from main.css */
+}
+
+
+
+.filters-sidebar {
+    /* Re-use .card style from main.css or profile.css if applicable */
+    background-color: var(--secondary-white, #FFFFFF);
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    align-self: flex-start;
+    position: sticky;
+    top: 100px; /* Adjust if header height is different + flash message space */
+}
+
+.filters-sidebar h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--text-color-headings);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--input-border-color, #eee);
+}
+
+.filters-sidebar .form-group {
+    margin-bottom: 18px;
+}
+
+.filters-sidebar .form-group label {
+    /* Inherited, or add: */
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.filters-sidebar input[type="text"],
+.filters-sidebar input[type="date"],
+.filters-sidebar input[type="number"],
+.filters-sidebar select {
+    /* Inherited from main.css */
+    font-size: 0.95rem;
+}
+
+.filters-sidebar .btn {
+    margin-top: 10px;
+    width: 100%; /* Make filter buttons full width of sidebar */
+}
+
+.filters-sidebar .clear-filters-btn {
+    margin-top: 10px !important; /* Ensure it's below apply */
+    background-color: var(--secondary-beige);
+    color: var(--primary-dark-blue);
+}
+.filters-sidebar .clear-filters-btn:hover {
+    background-color: #b0a090; /* Darker beige */
+}
+
+
+.trip-list-section {
+    /* Main content area for trip items */
+}
+
+.trip-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trip-item {
+    background-color: var(--secondary-white, #FFFFFF);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column; /* Default for mobile */
+    gap: 15px;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.trip-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.trip-item-main {
+    flex-grow: 1;
+}
+
+.trip-route {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-dark-blue);
+}
+
+.trip-route .location {
+    /* No specific style needed if color comes from parent */
+}
+
+.trip-route .route-arrow {
+    margin: 0 12px;
+    color: var(--primary-light-blue);
+    font-size: 1.1em;
+}
+
+.trip-time {
+    font-size: 0.95rem;
+    color: var(--gris-texte, #555); /* Use var from profile or main */
+    margin-bottom: 10px;
+}
+.trip-time i {
+    margin-right: 6px;
+    color: var(--primary-light-blue);
+}
+
+.trip-item-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 15px;
+    border-top: 1px solid var(--input-border-color, #eee);
+}
+
+.driver-info-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+.driver-avatar-small {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--secondary-beige);
+}
+.driver-rating-small {
+    font-weight: bold;
+    color: var(--primary-dark-blue);
+}
+.driver-rating-small i.fa-star {
+    color: #FFD700; /* Gold star */
+    margin-right: 2px;
+}
+
+.trip-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-brown);
+    text-align: right;
+}
+.trip-price small {
+    font-size: 0.8rem;
+    color: var(--gris-texte, #555);
+    display: block;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.trip-seats {
+    font-size: 0.95rem;
+    color: var(--primary-dark-blue);
+    font-weight: 500;
+    text-align: right;
+}
+.trip-seats i {
+    margin-right: 5px;
+    color: var(--primary-light-blue);
+}
+
+.trip-item-details .btn-sm {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    align-self: flex-end; /* Push to the right */
+}
+
+.no-trips-message {
+    background-color: var(--secondary-white, #FFFFFF);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    font-style: italic;
+    color: var(--gris-texte, #666);
+}
+
+/* Responsive */
+@media (min-width: 768px) { /* Tablet and up */
+    .trip-item {
+        flex-direction: row;
+        align-items: center;
+    }
+    .trip-item-details {
+        width: auto;
+        flex-basis: 220px; /* Fixed width for details column */
+        flex-shrink: 0;
+        border-top: none;
+        padding-top: 0;
+        border-left: 1px solid var(--input-border-color, #eee);
+        padding-left: 20px;
+        align-items: flex-end;
+    }
+    .trip-price, .trip-seats {
+        text-align: right; /* Ensure alignment in column */
+    }
+}
+
+@media (max-width: 992px) { /* Stack filters on top for tablets */
+    .browse-trips-container {
+        grid-template-columns: 1fr;
+    }
+    .filters-sidebar {
+        position: static;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    .browse-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .browse-header .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}

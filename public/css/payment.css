@@ -1,0 +1,108 @@
+
+.payment-container { /* Assuming the main div in payment.php has this class or just use .container */
+  max-width: 600px;
+  margin-top: 40px; /* Space below fixed header + flash messages */
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--secondary-white, #FFFFFF);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.payment-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: var(--text-color-headings);
+}
+
+/* Trip Recap Section */
+.recap-trip-details { /* Renamed from .recap for clarity */
+  background-color: var(--site-background, #f9f9f9); /* Light background */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid var(--input-border-color, #eee);
+}
+.recap-trip-details h3 {
+  font-size: 1.2rem;
+  color: var(--primary-dark-blue);
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--secondary-beige);
+}
+.recap-trip-details p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.recap-trip-details p strong {
+  color: var(--primary-dark-blue);
+  min-width: 100px; /* Align labels */
+  display: inline-block;
+}
+
+/* Payment Form */
+.payment-form .form-group {
+  margin-bottom: 20px;
+}
+/* Labels and Inputs will inherit from main.css */
+
+.payment-form input[type="text"],
+.payment-form input[type="tel"] { /* Assuming card number might be tel */
+  /* Inherited */
+}
+.payment-form .payment-card-details { /* For grouping card number, expiry, cvv */
+  display: flex;
+  gap: 15px;
+}
+.payment-form .payment-card-details .form-group {
+  flex: 1;
+}
+.payment-form .payment-card-details .expiry-group {
+  flex-basis: 60%;
+}
+.payment-form .payment-card-details .cvv-group {
+  flex-basis: 40%;
+}
+
+
+.payment-form .btn-submit-payment { /* Class for the payment button */
+  /* Inherits .btn and .btn-primary from main.css */
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+/* Confirmation/Status Message Area */
+.payment-confirmation-message {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 500;
+}
+.payment-confirmation-message.success {
+  background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;
+}
+.payment-confirmation-message.error {
+   background-color: #f8d7da; color: #842029; border: 1px solid #f5c2c7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .payment-container {
+      padding: 20px;
+  }
+  .payment-form .payment-card-details {
+      flex-direction: column;
+      gap: 0; /* Remove gap, let form-group handle margin */
+  }
+   .payment-form .payment-card-details .form-group {
+      margin-bottom: 20px; /* Add margin back */
+  }
+}

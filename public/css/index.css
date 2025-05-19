@@ -1,0 +1,44 @@
+/* ==========================
+   HOME PAGE (home.css)
+   ========================== */
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+/* Search bar (if used later) */
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-bar label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.search-bar input,
+.search-bar button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+.search-bar button {
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.search-bar button:hover {
+    background: #218838;
+}

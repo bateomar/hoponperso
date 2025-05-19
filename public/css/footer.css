@@ -1,0 +1,129 @@
+/* ==========================
+   FOOTER PRINCIPAL
+   ========================== */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    border-top: 2px solid #ddd;
+}
+
+/* ==========================
+   ALIGNEMENT DES ÉLÉMENTS
+   ========================== */
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-center {
+    display: flex;
+    gap: 50px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ==========================
+   LIENS DU FOOTER
+   ========================== */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #6FC8F0;
+}
+
+/* ==========================
+   ICÔNES SOCIALES
+   ========================== */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    text-decoration: none;
+}
+
+.socialContainer {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(44, 44, 44);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.containerOne:hover {
+    background-color: #d62976;
+}
+
+.containerTwo:hover {
+    background-color: #0072b1;
+}
+
+.socialSvg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+    transition: transform 0.3s;
+}
+
+.socialContainer:hover .socialSvg {
+    transform: scale(1.2);
+}
+
+/* ==========================
+   FOOTER BAS
+   ========================== */
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #334A5A;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #CCB5A5;
+}
+
+/* ==========================
+   RESPONSIVITÉ
+   ========================== */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-center {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-socials {
+        margin-top: 15px;
+    }
+}

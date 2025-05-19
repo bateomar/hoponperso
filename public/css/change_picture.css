@@ -1,0 +1,170 @@
+/* public/css/change_picture.css */
+/* Inherits styles from main.css */
+
+/* Using CSS variables defined in main.css */
+/* :root {
+    --primary-light-blue: #6FC8F0;
+    --primary-dark-blue: #334A5A;
+    --primary-brown: #90370F;
+    --secondary-beige: #CCB5A5;
+    --secondary-white: #FFFFFF;
+    --site-background: #FBF9F7;
+    --link-color: var(--primary-light-blue);
+    --link-hover-color: var(--primary-dark-blue);
+    --gris-texte: #666; /* Example from previous files */
+} */
+
+.change-picture-container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    max-width: 600px; /* Center the content */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.change-picture-content {
+    /* Re-use card styling or define specific card style */
+    background-color: var(--secondary-white, #FFFFFF);
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-align: center; /* Center content */
+}
+
+.change-picture-content h1 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--text-color-headings);
+}
+
+/* Display for the current picture */
+.current-picture-display {
+    margin-bottom: 25px;
+}
+
+.current-picture-display p {
+    font-size: 0.9rem;
+    color: var(--gris-texte, #666); /* Using var from previous CSS */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.current-picture-display img {
+    max-width: 200px; /* Limit size */
+    max-height: 200px;
+    width: 200px; /* Fixed size for consistency */
+    height: 200px;
+    border-radius: 50%; /* Make it round */
+    object-fit: cover; /* Ensure image covers the area nicely */
+    border: 4px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: inline-block; /* Needed for centering via text-align */
+}
+
+
+/* Form specific styles */
+.upload-form .form-group {
+    margin-bottom: 20px;
+}
+
+/* Styling the file input - Hide default, style the label */
+.upload-form input[type="file"] {
+    /* Hides the default browser file input */
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+}
+
+.upload-form .file-upload-label {
+    /* Style the label to look like a button */
+    display: inline-block;
+    padding: 10px 25px;
+    /* Use a distinct color, maybe dark blue */
+    background-color: var(--primary-dark-blue);
+    color: var(--secondary-white);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    border: none; /* Ensure no default border */
+}
+
+.upload-form .file-upload-label:hover {
+    background-color: #4a657a; /* Darken the dark blue */
+}
+
+/* Add FontAwesome icon support if you use it */
+.upload-form .file-upload-label i.fas {
+    margin-right: 8px;
+}
+
+/* Display selected file name */
+.file-name-display {
+    display: block; /* Take its own line */
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--gris-texte, #666); /* Using var from previous CSS */
+    min-height: 1.2em; /* Prevent layout shift if no file chosen */
+    font-style: italic;
+}
+
+/* Small helper text */
+.upload-form .form-group small {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--gris-texte, #666);
+    margin-top: 8px;
+}
+
+
+/* Error message styling */
+.change-picture-content .error-message {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #F8D7DA;
+    color: var(--primary-brown);
+    border-color: var(--primary-brown);
+}
+
+/* Action buttons area */
+.upload-form .form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Center buttons */
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.upload-form .form-actions .btn {
+    min-width: 120px; /* Give buttons some minimum width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+     .change-picture-content {
+        padding: 20px;
+    }
+    .current-picture-display img {
+        max-width: 150px;
+        max-height: 150px;
+        width: 150px;
+        height: 150px;
+    }
+    .upload-form .file-upload-label {
+        padding: 8px 20px;
+    }
+    .upload-form .form-actions .btn {
+        min-width: 100px;
+        padding: 9px 15px;
+    }
+}

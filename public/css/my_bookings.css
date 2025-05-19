@@ -1,0 +1,182 @@
+/* public/css/my_bookings.css */
+/* Inherits styles from main.css (for .container, .btn, .card, etc.) */
+
+.my-bookings-container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    /* Uses .container for max-width from main.css */
+}
+
+.my-bookings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--input-border-color, #eee);
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 15px; /* Gap between title and filter buttons */
+}
+
+.my-bookings-header h1 {
+    margin-bottom: 0; /* Reset default margin */
+    font-size: 1.9rem;
+    color: var(--text-color-headings);
+    flex-grow: 1; /* Allow title to take available space */
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0; /* Prevent buttons from shrinking too much */
+}
+.filter-buttons .btn {
+    padding: 8px 15px; /* Slightly smaller buttons for filters */
+    font-size: 0.9rem;
+}
+/* Style for active filter button */
+.filter-buttons .btn-primary {
+    /* Uses styles from main.css */
+}
+.filter-buttons .btn-outline {
+    /* Define in main.css or here if needed */
+    background-color: transparent;
+    color: var(--primary-light-blue);
+    border: 1px solid var(--primary-light-blue);
+}
+.filter-buttons .btn-outline:hover {
+    background-color: var(--primary-light-blue);
+    color: var(--secondary-white);
+}
+
+
+/* Booking List Styles */
+.booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between booking items */
+}
+
+.booking-item {
+    /* Uses .card style from main.css */
+    padding: 20px 25px;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.booking-item:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+.booking-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--input-border-color, #eee);
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 10px;
+}
+
+.booking-item-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--primary-dark-blue);
+    flex-grow: 1; /* Allow title to take space */
+}
+.booking-item-header h3 i.fa-long-arrow-alt-right {
+    font-size: 0.9em;
+    color: var(--primary-light-blue);
+    margin: 0 8px;
+}
+
+.booking-status {
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 5px 12px; /* Adjusted padding */
+    border-radius: 20px; /* Pill shape */
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-width: 1px;
+    border-style: solid;
+}
+/* Status-specific colors - match flash message alerts for consistency */
+.status-pending-confirmation { background-color: #fff3cd; color: #664d03; border-color: #ffecb5;}
+.status-confirmed { background-color: #d1e7dd; color: #0f5132; border-color: #badbcc;}
+.status-cancelled-passenger,
+.status-cancelled-driver { background-color: #f8d7da; color: #842029; border-color: #f5c2c7;}
+.status-completed { background-color: #e2e3e5; color: #41464b; border-color: #d3d6d8;}
+.status-no-show { background-color: #f8d7da; color: #58151c; border-color: #f1b0b7;}
+.status-paid { background-color: #cff4fc; color: #055160; border-color: #b6effb; } /* Example for a 'paid' status */
+
+
+.booking-item-body p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    color: var(--gris-texte, #555); /* Using var from previous CSS */
+    line-height: 1.5;
+}
+.booking-item-body p strong {
+    color: var(--primary-dark-blue);
+    min-width: 130px; /* Align labels in the details */
+    display: inline-block;
+}
+
+.booking-item-actions {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--input-border-color, #eee);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    justify-content: flex-end; /* Align buttons to the right */
+}
+.booking-item-actions .btn-sm {
+    /* General .btn-sm styling could be in main.css */
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+/* Specific button colors if not globally defined */
+.btn-danger { background-color: #dc3545; color: white; border-color: #dc3545; }
+.btn-danger:hover { background-color: #c82333; border-color: #bd2130; }
+.btn-success { background-color: #198754; color: white; border-color: #198754; }
+.btn-success:hover { background-color: #157347; border-color: #146c43; }
+
+
+.no-bookings-message {
+    /* Uses .card styles */
+    text-align: center;
+    font-style: italic;
+    padding: 30px;
+    color: var(--gris-texte, #666); /* Using var */
+}
+.no-bookings-message a {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .my-bookings-header {
+        flex-direction: column;
+        align-items: stretch; /* Make title and button group full width */
+    }
+    .filter-buttons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .filter-buttons .btn { flex-grow: 1; } /* Make filter buttons share space */
+
+    .booking-item-header {
+        flex-direction: column;
+        align-items: flex-start; /* Align title and status to the left */
+    }
+    .booking-status {
+        margin-top: 8px; /* Space when stacked */
+    }
+    .booking-item-actions {
+        justify-content: center; /* Center action buttons on small screens */
+    }
+}

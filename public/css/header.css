@@ -1,0 +1,280 @@
+/* public/css/header.css */
+
+/* Using CSS variables defined in main.css */
+
+.site-header {
+    /* --- Positioning & Background --- */
+    position: fixed; /* Make header fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+    background-color: rgba(255, 255, 255, 0.9); /* Initial semi-transparent white */
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect behind the header */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    padding: 5px 0; /* Vertical padding */
+    border-bottom: 1px solid rgba(221, 221, 221, 0.7); /* Softer border, slightly transparent */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); /* Softer shadow */
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Style for when the page is scrolled */
+.site-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.98); /* Less transparent on scroll */
+    border-color: rgba(221, 221, 221, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Adjust body padding to prevent content from hiding under the fixed header */
+/* The value should be slightly more than the header's height */
+body {
+    /* Calculate approx height: 10px padding + 50px logo + 10px padding = 70px. Add some buffer. */
+    padding-top: 100px;
+}
+
+.header-container {
+    /* .container class from main.css handles max-width and horizontal padding/centering */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure container inside header takes full width */
+}
+
+/* --- Header Left: Logo and Navigation --- */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* User requested gap (was 40px for logo margin + 25px nav gap previously) */
+}
+
+.logo-link {
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.logo-link .site-logo {
+    display: block;
+    height: 50px;   /* Control logo height */
+    width: auto;
+    /* Removed margin-right, using gap on parent now */
+}
+
+.main-navigation .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Consistent gap between nav items */
+}
+
+.main-navigation .nav-links a {
+    text-decoration: none;
+    color: var(--primary-dark-blue, #333); /* Use dark blue from charte, fallback to #333 */
+    font-weight: bold; /* User request */
+    font-size: 1rem;
+    padding: 8px 10px; /* Adjusted padding */
+    border-radius: 4px; /* Slightly less round */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+.main-navigation .nav-links a::after { /* Underline effect for active/hover */
+    content: '';
+    position: absolute;
+    bottom: -3px; /* Adjust position slightly */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-light-blue, #6FC8F0);
+    transition: width 0.3s ease;
+}
+
+.main-navigation .nav-links a:hover,
+.main-navigation .nav-links a.active {
+    color: var(--primary-light-blue, #6FC8F0);
+}
+
+.main-navigation .nav-links a:hover::after,
+.main-navigation .nav-links a.active::after {
+    width: 60%; /* Adjust underline width */
+}
+
+
+/* --- Header Right: Action Buttons --- */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* User requested gap */
+}
+
+/* Use general .btn styles from main.css but override specifics for header */
+.header-right .btn {
+    padding: 9px 18px; /* User goal sizing (adjust from main.css if needed) */
+    font-size: 0.95rem; /* Slightly smaller than global */
+    font-weight: bold;  /* User goal */
+    /* Colors and hover effects should ideally come from .btn-primary / .btn-outline in main.css */
+}
+
+/* Example overrides if main.css variables don't match user goal exactly for header */
+.header-right .btn-outline {
+    /* Ensure styles defined in main.css match or override here */
+    /* border: 2px solid var(--primary-light-blue); */
+    /* color: var(--primary-light-blue); */
+}
+.header-right .btn-outline:hover {
+    /* background-color: var(--primary-light-blue); */
+    /* color: var(--secondary-white); */
+}
+
+.header-right .btn-primary {
+    /* Ensure styles defined in main.css match or override here */
+    /* background-color: var(--primary-light-blue); */
+    /* color: var(--primary-dark-blue); */
+}
+.header-right .btn-primary:hover {
+    /* background-color: var(--button-primary-hover-bg); */
+    /* Use a slightly darker primary dark blue if needed: #1e2f3a */
+    /* background-color: #1e2f3a; */ /* Direct override if main.css isn't enough */
+}
+
+
+/* --- Responsive Menu (Hamburger) - Basic Placeholder --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-dark-blue);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    .main-navigation {
+        /* Requires JS to toggle */
+        display: none; /* Hide desktop nav */
+        /* Position absolute or similar for dropdown */
+    }
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+    /* You might want to hide some buttons or move them into the mobile menu */
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 10px 0; /* Less vertical padding */
+    }
+    .header-container {
+        padding-left: 20px; /* Add padding here for mobile */
+        padding-right: 20px;
+    }
+    .logo-link .site-logo {
+        height: 40px; /* Smaller logo */
+    }
+    /* Hide desktop navigation completely if mobile menu is active */
+    .main-navigation {
+        display: none;
+    }
+    /* Adjust right side for mobile if needed, maybe only show signup button */
+    .header-right {
+       /* Adjust gap or potentially hide login button */
+       gap: 10px;
+    }
+    .header-right .btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    .menu-toggle {
+        display: block; /* Ensure hamburger is shown */
+    }
+}
+
+/* If you want the stacking behavior from the user goal CSS */
+/* (This usually looks less professional than a proper hamburger menu) */
+/*
+@media (max-width: 768px) {
+    .site-header {
+        padding: 10px 20px;
+    }
+    .header-container {
+        flex-direction: column;
+        align-items: center; // Center items when stacked
+        gap: 10px;
+    }
+    .header-left {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    .logo-link {
+        margin: 0 auto; // Center logo
+    }
+    .logo-link .site-logo {
+        margin-right: 0;
+        height: 45px;
+    }
+    .main-navigation {
+        width: 100%;
+    }
+    .main-navigation .nav-links {
+        flex-direction: column; // Stack nav links
+        align-items: center;
+        width: 100%;
+        gap: 5px;
+    }
+    .main-navigation .nav-links a {
+        padding: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    .main-navigation .nav-links a::after {
+        bottom: -1px; // Adjust underline pos
+    }
+    .header-right {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .header-right .btn {
+        width: 80%; // Make buttons wide but not full width
+        margin: 0 auto; // Center buttons
+        text-align: center;
+    }
+    body {
+        padding-top: 180px; // Adjust significantly if header stacks tall
+    }
+}
+*/
+
+/* Add this to public/css/header.css */
+
+.header-right .welcome-message {
+    color: var(--primary-dark-blue);
+    font-size: 0.95rem;
+    margin-right: 10px; /* Add some space before buttons */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Adjust button styles specifically for logged-in state if needed */
+.header-right .btn-secondary {
+    /* Example: Make profile button slightly different */
+     /* background-color: var(--secondary-beige); */
+     /* color: var(--primary-dark-blue); */
+     /* border-color: var(--secondary-beige); */
+}
+.header-right .btn-secondary:hover {
+     /* background-color: darken(var(--secondary-beige), 10%); */
+}
+
+
+/* Responsive adjustments if needed */
+@media (max-width: 992px) {
+    /* Might need to hide welcome message or shorten it in mobile menu */
+}
+@media (max-width: 768px) {
+    .header-right .welcome-message {
+        display: none; /* Hide welcome message on small mobile */
+    }
+}

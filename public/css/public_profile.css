@@ -1,0 +1,74 @@
+/* public/css/public_profile.css */
+/* Inherits from main.css and potentially profile.css if general enough */
+
+/* Use existing .profile-container, .profile-grid, .profile-sidebar, .profile-main-content, .card from profile.css */
+/* Ensure those classes are generic enough or duplicate necessary parts here */
+
+/* If profile.css is already linked for the $pageName='profile' and styles are general, */
+/* this file might only need minor adjustments or specific overrides. */
+
+/* Example: if you want slightly different spacing or emphasis */
+.public-profile-container {
+    /* Uses .container from main.css */
+}
+
+.profile-name-section h1 {
+    font-size: 2rem; /* Slightly larger for public view */
+}
+
+.profile-verification ul,
+.profile-preferences ul {
+    font-size: 0.9rem; /* Slightly smaller for public view if desired */
+}
+
+.profile-upcoming-trips h2,
+.profile-ratings-received h2,
+.profile-vehicles h2 { /* If reusing .profile-vehicles class */
+    margin-top: 20px;
+}
+
+.trip-list-condensed {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.trip-list-condensed li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--input-border-color, #eee);
+}
+.trip-list-condensed li:last-child {
+    border-bottom: none;
+}
+.trip-list-condensed .trip-link {
+    display: block;
+    text-decoration: none;
+    color: var(--primary-dark-blue);
+    padding: 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+.trip-list-condensed .trip-link:hover {
+    background-color: #f8f9fa;
+}
+.trip-list-condensed .trip-link strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+.trip-list-condensed .trip-link .trip-date {
+    font-size: 0.9rem;
+    color: var(--gris-texte);
+    margin-right: 15px;
+}
+.trip-list-condensed .trip-link .trip-price-public {
+    font-weight: bold;
+    color: var(--primary-brown);
+    margin-right: 15px;
+}
+.trip-list-condensed .trip-link .trip-seats-public {
+    font-size: 0.9rem;
+    color: var(--primary-dark-blue);
+}
+
+/* Re-use .ratings-list, .rating-item from profile.css or view_ratings.css if general */

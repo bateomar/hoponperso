@@ -1,0 +1,159 @@
+/* Search Box Styles */
+.search-sort-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 15px;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+}
+
+.search-field {
+    position: relative;
+    flex: 1;
+    min-width: 180px;
+}
+
+.search-field i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--lighter-text);
+}
+
+.search-field input {
+    width: 100%;
+    padding: 12px 12px 12px 35px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-field input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(59, 89, 152, 0.1);
+}
+
+.search-field input::placeholder {
+    color: var(--lighter-text);
+}
+
+#search-button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#search-button:hover {
+    background-color: var(--accent-color);
+}
+
+#search-button i {
+    font-size: 16px;
+}
+
+/* Date and Time Input Styling */
+input[type="date"],
+input[type="time"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+/* Styles pour les boutons d'action */
+.ride-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.ride-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.details-btn {
+    background-color: #f5f5f5;
+    color: #555555;
+    border: 1px solid #e0e0e0;
+    flex: 1;
+    margin-right: 8px;
+}
+
+.details-btn:hover {
+    background-color: #e8e8e8;
+}
+
+.reservation-btn {
+    background-color: #ff5f45;
+    color: white;
+    border: 1px solid #ff5f45;
+    flex: 1;
+    margin-left: 8px;
+}
+
+.reservation-btn:hover {
+    background-color: #e55540;
+    border-color: #e55540;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-field {
+        width: 100%;
+    }
+    
+    #search-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .ride-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .ride-btn {
+        margin: 0;
+    }
+}

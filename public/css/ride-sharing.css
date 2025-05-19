@@ -1,0 +1,568 @@
+/* Ride Sharing Styles */
+.share-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.share-content {
+    background-color: var(--bg-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.share-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.share-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.share-header h1 i {
+    color: var(--primary-color);
+}
+
+.share-header p {
+    color: var(--light-text);
+    margin: 0.5rem 0 0;
+}
+
+.share-main {
+    padding: 1.5rem;
+}
+
+.share-section {
+    margin-bottom: 2rem;
+}
+
+.share-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.share-section h2 i {
+    color: var(--primary-color);
+}
+
+.share-description {
+    margin-bottom: 1.5rem;
+    color: var(--light-text);
+}
+
+.share-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contacts-container {
+    margin-top: 1rem;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    background-color: var(--bg-hover);
+}
+
+.contact-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-name {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.contact-detail {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.contact-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--light-text);
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.action-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--primary-color);
+}
+
+.action-btn.delete:hover {
+    color: #f44336;
+}
+
+.add-contact-form {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+}
+
+.submit-button, .share-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.submit-button:hover, .share-button:hover {
+    background-color: var(--accent-color);
+}
+
+.cancel-button {
+    background-color: transparent;
+    color: var(--light-text);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cancel-button:hover {
+    background-color: var(--light-bg);
+}
+
+.empty-contacts {
+    text-align: center;
+    padding: 2rem;
+    color: var(--light-text);
+}
+
+.empty-contacts i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--border-color);
+}
+
+.empty-contacts p {
+    margin-bottom: 1.5rem;
+}
+
+.ride-share-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.ride-share-status.active {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.ride-share-status.inactive {
+    background-color: rgba(158, 158, 158, 0.1);
+    color: #9E9E9E;
+}
+
+.rides-container {
+    margin-top: 1.5rem;
+}
+
+.ride-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ride-card {
+    padding: 1.2rem;
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.ride-card:hover {
+    background-color: var(--bg-hover);
+}
+
+.ride-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.ride-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ride-date {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.ride-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.ride-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.ride-detail-icon {
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+}
+
+.ride-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.ride-map-preview {
+    height: 150px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
+}
+
+.share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.share-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.share-modal-content {
+    background-color: var(--bg-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(20px);
+    transition: transform 0.3s;
+}
+
+.share-modal.active .share-modal-content {
+    transform: translateY(0);
+}
+
+.share-modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.share-modal-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.share-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.share-modal-close:hover {
+    background-color: var(--light-bg);
+}
+
+.share-modal-body {
+    padding: 1.5rem;
+}
+
+.share-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.share-method {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.share-method:hover {
+    background-color: var(--light-bg);
+    border-color: var(--primary-color);
+}
+
+.share-method.selected {
+    border-color: var(--primary-color);
+    background-color: rgba(59, 89, 152, 0.05);
+}
+
+.share-method-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.share-method-info {
+    flex: 1;
+}
+
+.share-method-title {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.share-method-description {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.share-tracking-link {
+    margin-top: 1.5rem;
+}
+
+.tracking-link-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tracking-link-input input {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+}
+
+.copy-link-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-link-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.tracking-link-expire {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--light-text);
+}
+
+.share-modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.live-tracking-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: column;
+    text-align: center;
+}
+
+.live-tracking-status {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    color: #4CAF50;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.live-tracking-status i {
+    font-size: 1.5rem;
+}
+
+.tracking-id {
+    background-color: var(--light-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: monospace;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.stop-tracking-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.stop-tracking-btn:hover {
+    background-color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+    .ride-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .tracking-link-input {
+        flex-direction: column;
+    }
+    
+    .share-modal-content {
+        width: 95%;
+    }
+}

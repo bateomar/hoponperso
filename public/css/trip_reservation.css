@@ -1,0 +1,327 @@
+
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-outline-primary {
+    color: var(--bleu-clair);
+    border-color: var(--bleu-clair);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bleu-clair);
+    color: var(--blanc);
+}
+
+.btn-outline-secondary {
+    color: var(--bleu-fonce);
+    border-color: var(--bleu-fonce);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--bleu-fonce);
+    color: var(--blanc);
+}
+
+.btn-primary {
+    background-color: var(--bleu-clair);
+    color: var(--blanc);
+}
+
+.btn-primary:hover {
+    background-color: var(--bleu-hover);
+}
+
+.me-2 {
+    margin-right: 10px;
+}
+
+.my-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-secondary {
+    background-color: #6c757d;
+}
+
+/* Alertes */
+.alert {
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Grille */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-lg-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Carte de trajet */
+.trajet-card {
+    background-color: var(--blanc);
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.trajet-card:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+}
+
+.trajet-info {
+    display: flex;
+    align-items: flex-start;
+}
+
+.trajet-horaire {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.trajet-lieu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.trajet-separation {
+    border-left: 2px solid var(--bleu-clair);
+    height: 40px;
+    margin: 5px 0;
+}
+
+.trajet-heure {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--bleu-fonce);
+}
+
+.trajet-ville {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--brun);
+}
+
+.trajet-detail {
+    color: var(--gris-texte);
+    font-size: 14px;
+}
+
+/* Conducteur */
+.conducteur-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--gris-moyen);
+}
+
+.conducteur-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--gris-moyen);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--bleu-fonce);
+}
+
+.conducteur-note {
+    color: #ffc107;
+    margin-right: 8px;
+}
+
+h5 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+}
+
+/* Véhicule et préférences */
+.vehicule-info, .preferences {
+    color: var(--gris-texte);
+    margin-top: 15px;
+}
+
+.preference-icon {
+    color: var(--bleu-clair);
+    margin-right: 8px;
+    width: 16px;
+}
+
+/* Card de réservation */
+.reservation-card {
+    background-color: var(--blanc);
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+/* Prix */
+.trajet-prix-label {
+    font-size: 14px;
+    color: var(--gris-texte);
+    margin-bottom: 4px;
+}
+
+.trajet-prix {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--bleu-fonce);
+}
+
+/* Places disponibles */
+.trajet-places {
+    display: flex;
+    align-items: center;
+    background-color: rgba(111, 200, 246, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+.places-icon {
+    color: var(--vert-dispo);
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+.places-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bleu-fonce);
+}
+
+/* Bouton réservation */
+.btn-reserver {
+    background-color: var(--bleu-clair);
+    color: var(--blanc);
+    padding: 12px 0;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-reserver:hover {
+    background-color: var(--bleu-hover);
+}
+
+.btn-reserver:disabled, .btn-reserver.bg-secondary {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Contact */
+.text-primary {
+    color: var(--bleu-clair);
+}
+
+.text-muted {
+    color: var(--gris-texte);
+}
+
+/* Styles pour responsive */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .col-lg-8, .col-lg-4 {
+        max-width: 100%;
+    }
+    
+    .trajet-info {
+        flex-direction: column;
+    }
+    
+    .trajet-horaire {
+        flex-direction: row;
+        margin-bottom: 15px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .trajet-separation {
+        border-left: none;
+        border-top: 2px solid var(--bleu-clair);
+        width: 40px;
+        height: auto;
+        margin: 0 10px;
+    }
+}
